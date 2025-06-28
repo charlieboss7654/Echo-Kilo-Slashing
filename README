@@ -1,0 +1,59 @@
+# Tyre Slashing Script
+
+A lightweight FiveM script that allows players to slash vehicle tyres using specific melee weapons. Fully compatible with all vehicles, including addon cars (not all work as not all have the correct 'bones') and motorcycles. Uses `ox_target` for interaction directly at the wheel bones.
+
+
+## Features
+
+* Works on **base game and addon vehicles**
+* Requires player to hold a slashing weapon (e.g., knife)
+* Tyre instantly pops with animation
+* Uses `ox_target` for precise interaction
+
+
+## Dependencies
+
+ox_target- https://github.com/overextended/ox_targe
+
+
+## Installation
+
+1. Place the script folder in your server's `resources` directory.
+
+2. Add the following line to your `server.cfg`:
+
+   ensure EKS_Slashing
+
+3. Make sure `ox_target` is also started in your server.
+
+## Configuration
+
+Edit `config.lua` to control which weapons are allowed for slashing.
+
+Config = {}
+
+Config.SlashingWeapons = {
+    [GetHashKey('WEAPON_KNIFE')] = true,
+    [GetHashKey('WEAPON_SWITCHBLADE')] = true,
+    [GetHashKey('WEAPON_DAGGER')] = true,
+    [GetHashKey('WEAPON_MACHETE')] = true
+}
+
+## How to Use
+
+1. Equip a valid slashing weapon.
+2. Walk up to any vehicle or motorcycle tyre.
+3. Use `ox_target` to interact with the tyre.
+
+
+## Notes
+
+* The script uses native bone detection to ensure targeting accuracy on all vehicle types.
+* No sound is played, but the tyre will POP as the driver pulls away.
+* Not all addon (modded vehicles) will have the option to slice the tyre as the individual who made them may have not used compatible bones.
+
+
+## DO NOT CHANGE THE NAME OF THE SCRIPT FOLDER - DO NOT CHANGE ANYTHING IN THE FXMANIFEST OR THE SCRIPT WILL NOT WORK
+
+Support:
+https://discord.gg/busQ9w6dqa
